@@ -1,0 +1,89 @@
+body{
+    color:brown;
+    background-color:darkgray;
+}
+h1.title{
+    color:crimson;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    margin-bottom: auto;
+    width: 30%;
+  }
+
+h5.warning{
+    color: crimson;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+}
+
+h2.NBAHeader{color: black;}
+
+li.GiannisH:hover{color: black;}
+ul.Gstats{
+    display: none;
+}
+li.GiannisH:hover + ul.Gstats{
+    display: block;
+    color: darkgreen;
+}
+
+li.Steph:hover{color: black;}
+ul.Sstats{
+    display: none;
+}
+li.Steph:hover + ul.Sstats{
+    display: block;
+    color: blueviolet;
+}
+
+li.KD:hover{color: black;}
+ul.KDstats{
+    display: none;
+}
+li.KD:hover + ul.KDstats{
+    display: block;
+    color:cornflowerblue;
+}
+
+h2.WNBAHeader{
+    color: blue;
+}
+
+li.Candace:hover{color:blue;}
+ul.CandaceStats{
+    display: none;
+}
+li.Candace:hover + ul.CandaceStats{
+    display: block;
+    color:darkmagenta;
+}
+
+li.Breanna:hover{color:blue;}
+ul.BreannaStats{
+    display: none;
+}
+li.Breanna:hover + ul.BreannaStats{
+    display: block;
+    color:aliceblue;
+}
+
+li.Sue:hover{color:blue;}
+ul.SueStats{
+    display: none;
+}
+li.Sue:hover + ul.SueStats{
+    display: block;
+    color:greenyellow;
+}
+
+table{
+    border: 100px solid;
+    border: black;
+}
