@@ -1,17 +1,24 @@
-documents.querySelector('launchButton').onclick = function(){
-bob()
-};
-function bob(){
-    let launch = document.querySelector('rocket');
 
-    let moveVertical = function() {
-        let currentPos = launch.style.marginTop;
-        if(currentPos < -400){
-            launch.style.marginTop = currentPos - 50;
+document.querySelector(".launchButton").onclick = function(){ bob() };
+
+function bob(){
+    console.log("hello");
+    
+
+    function moveVertical() {
+        let launch = document.querySelector(".rocket");
+        if(!launch.style.top){
+            launch.style.top = "0px";
+        }
+        let pixels = parseInt(launch.style.top, 10);
+        let currentPos = pixels;
+        if(currentPos > -800){
+            launch.style.top = (currentPos - 1) + "px";
         }
         else{
             window.clearInterval(timer)
+            launch.style.top = "0px";
         }
     };
-    let timer = window.setInterval(moveVertical, 500);
+    let timer = window.setInterval(moveVertical, 10);
 }
