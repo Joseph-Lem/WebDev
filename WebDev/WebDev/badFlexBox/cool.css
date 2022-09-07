@@ -1,0 +1,29 @@
+h1.welcome{
+    display: flex;
+    background-color: black;
+    color:ivory;
+    justify-content: center;
+}
+div{
+    display: flex;
+    justify-content: space-around;
+}
+ul.allBox{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+li.box{
+  background: purple;
+  padding: 5px;
+  width: 300px;
+  height: 200px;
+  margin-top: 100px;
+  margin-left:150px;
+  margin-right:150px;
+  line-height: 150px;
+  color: azure;
+  font-weight: bold;
+  font-size: 3em;
+  text-align: center;
+}

@@ -13,7 +13,6 @@ function bob(){
         let pixels = parseInt(launch.style.top, 10);
         let currentPos = pixels;
         if(currentPos > -800){
-            console.log("currentPos: " + currentPos);
             launch.style.top = (currentPos - 1) + "px";
         }
         else{
