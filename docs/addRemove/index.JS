@@ -35,8 +35,10 @@ function removeFromChosen(index){
 let addButt = document.querySelector("#addB");
 let removeButt = document.querySelector("#removeB");
 
-addButt.onclick = () => {moveToOptions(0)};
-removeButt.onclick = () => {moveToChosen(0)};
+
+addButt.onclick = () => {moveToOptions(w)};
+removeButt.onclick = () => {moveToChosen(w)};
+
 
 function moveToOptions(index){
 
@@ -52,4 +54,26 @@ function moveToChosen(index){
     removeFromChosen(index);
     optionsList.push(chosenList[index]);
     chosenList.splice(index, 1);
+}
+
+
+
+let isSelected = [];
+
+for (let el of document.querySelectorAll("#options li")) {
+  isSelected.push(false);
+  el.onclick = () => {
+    // index of the element???
+    let allItems = Array.from(document.querySelectorAll("#options li"));
+    let index = allItems.indexOf(el);
+    //console.log("Index: " + index);
+    // toggle the appropriate isSelected element
+    isSelected[index] = !isSelected[index];
+    if (isSelected[index]) {
+      el.style.backgroundColor = "red";
+    }
+    else {
+      el.style.backgroundColor = "";
+    }
+  };
 }
