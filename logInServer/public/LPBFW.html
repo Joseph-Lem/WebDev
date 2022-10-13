@@ -8,11 +8,23 @@
     <h1>we here, yo</h1>
 </head>
 <body>
-    <p>ahhhhhhh</p>
+    <div> 
+        <form method="post" action =  "/LPBFW">
+            <label for = "posttext">Post: </label>
+            <input type = "text" name = "posttext" id = "fname">
+        </form>
+    </div>
     <div>
-        <form method = "post" action = "/LPBFW"> 
+        <form>
+        <input type = "submit" value = "Publish">
+        </form>
+    </div>
+    <p>ahhhhhhh</p>
+    <div class = "logout">
+        <form method = "post" action = "/logout"> 
             <input type = "submit" value = "Logout">
         </form>
     </div>
+
 </body>
 </html>

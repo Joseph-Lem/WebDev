@@ -1,10 +1,20 @@
 const { appendFile } = require("fs");
 const express = require('express');
+const session = require('express-session');
 const app = express();
 const port = 3000
 
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: false }));
+//cookies
+app.set('trust proxy', 1) // trust first proxy
+app.use(session({
+  secret: 'sussyAmongus',
+  resave: false,
+  saveUninitialized: true,
+  cookie: { secure: false }
+}));
+
 //firstname:" ", lastname: "", username: "", password:""
 let userInfo = [{firstname:"joe", lastname:"lem", username: "lem", password:"joe"}];
 
@@ -24,7 +34,7 @@ function htmlEnd(res){
 </html>`)
 res.end();
 }
-let userLoggedIn = false;
+// let userLoggedIn = false;
 
 app.post('/login', (req, res) => {
     let enteredUsername = req.body.username;
@@ -32,7 +42,10 @@ app.post('/login', (req, res) => {
     for(let x of userInfo){
         if ((enteredUsername === x.username) && (enteredPassword === x.password)){
             console.log('correct, youre logged in');
-            userLoggedIn = true;
+            //cool cookie stuff
+            req.session.userid = req.body.username;
+            console.log(req.session);
+            req.session.userid.LoggedIn = true;
             res.redirect('LPBFW.html');
             return;
         }
@@ -72,20 +85,22 @@ app.post('/register', (req, res) => {
     htmlEnd(res);
 });
 app.post('/LPBFW', (req, res)=> {
-    userLoggedIn = false;
-    res.redirect('index.html');
-    return;
     htmlStart(res, "yuh");
     htmlEnd(res);
 });
-app.use('/LPBFW', (req,res,next)=> {
-//restrict users that are not loggedin 
-if(!userLoggedIn){
+app.post('/logout', (req, res) => {
+    req.session.userid.LoggedIn = false;
+    res.redirect('index.html');
+    return;
+});
+app.use('/LPBFW', (req,res,next)=> { 
+if(req.session.userid.LoggedIn = false){
     res.redirect('index.html');
     console.log('you cant be here');
     return;
 }
 else{
+    next();
 }
 });
 
