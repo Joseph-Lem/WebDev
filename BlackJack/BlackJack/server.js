@@ -59,32 +59,17 @@ let deck = [
     {"rank": 13, "suit": "clubs"},
     {"rank": 14, "suit": "clubs"}]
 
-
-let hand = [
-    {
-        rank: 3,
-        suit: "hearts"
-    },
-    {
-        rank: 2,
-        suit: "diamonds"
-    },
-    {
-        rank: 4,
-        suit: "spades"
-    }
-
-];
-
+    
 let game = {
     playerHand: [],
     dealerHand: [],
-    
 }
 
 function handValue(hand) 
 {
     let sum = 0
+    let numAces = 0
+    console.log(sum)
     for(let card of hand){
         if(card.rank < 11 && card.rank > 1){
             sum = sum + card.rank
@@ -93,16 +78,13 @@ function handValue(hand)
             sum = sum + 10
         }
         else if(card.rank === 14){
-            let numAces = 0 
             numAces++
-            if(sum + numAces*11 <= 21){
-                sum = sum + (numAces*11)
-            }
-            else{
-                sum = sum + (numAces*1)
-            }
+            sum = sum + 11 
         }
-
+    }
+    while(sum > 21 && numAces > 0){
+        sum = sum - 10
+        numAces--
     }
     console.log(sum)
     return sum;
@@ -131,6 +113,9 @@ function resetGame()
 
     game.dealerHand.push(deck.pop())
     game.dealerHand.push(deck.pop())
+
+    game.win = "no one wins "
+    game.message = "this is a new game"
 
 }
 function win(hand1, hand2){

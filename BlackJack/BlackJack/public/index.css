@@ -1,0 +1,38 @@
+div#dealerStuff{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: blue;
+    gap: 30px;
+    
+}
+div#playerStuff{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: blue;
+    gap: 30px;
+}
+div#buttonRow{
+    display: flex;
+    align-items: flex-end;
+    background-color: orange;
+}
+div#cards{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+h1{
+    color: white;
+    text-align: center;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    background-color: green;
+}
+
+

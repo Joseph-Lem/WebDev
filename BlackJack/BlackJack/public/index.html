@@ -1,27 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
     <title>BlackJack</title>
 </head>
+
 <body>
-    <form method = "post" action = "/restart"> 
-        <input type="Submit" value="Reset">
-    </form> 
+    <div id = cards>
+        <div id=dealerStuff>
+            <h1>Dealers Hand</h1>
+            <div>
+                <img src="Deck of cards/2_of_clubs.png" alt="two of clubs" width="100" height="150">
+                <img src="Deck of cards/2_of_clubs.png" alt="two of clubs" width="100" height="150">
+                <img src="Deck of cards/2_of_clubs.png" alt="two of clubs" width="100" height="150">
+                <img src="Deck of cards/2_of_clubs.png" alt="two of clubs" width="100" height="150">
+            </div>
+        </div>
+        <div id=playerStuff>
+            <h1>Player Hand</h1>
+            <div>
+                <img src="Deck of cards/3_of_clubs.png" alt="three of clubs" width="100" height="150">
+                <img src="Deck of cards/3_of_clubs.png" alt="three of clubs" width="100" height="150">
+                <img src="Deck of cards/3_of_clubs.png" alt="three of clubs" width="100" height="150">
+                <img src="Deck of cards/3_of_clubs.png" alt="three of clubs" width="100" height="150">
+            </div>
+        </div>
+    </div>
+    <div>
+    <div id=buttonRow>
+        <form method="post" action="/restart">
+            <input type="Submit" value="Reset">
+        </form>
 
-    <form method = "post" action = "/handVal"> 
-        <input type="Submit" value="sum">
-    </form> 
+        <form method="post" action="/handVal">
+            <input type="Submit" value="sum">
+        </form>
 
-    <form method = "post" action = "/hit"> 
-        <input type="Submit" value="hit">
-    </form> 
+        <form method="post" action="/hit">
+            <input type="Submit" value="hit">
+        </form>
 
-    <form method = "post" action = "/stand"> 
-        <input type="Submit" value="stand">
-    </form> 
-    
+        <form method="post" action="/stand">
+            <input type="Submit" value="stand">
+        </form>
+    </div>
+</div>
 </body>
+
 </html>
