@@ -204,8 +204,12 @@ app.post("/hit", (req, res) => {
     res.json(game)
 });
 
-app.post("/handVal", (req, res) => {
+app.post("/playerHandVal", (req, res) => {
     res.json(handValue(game.playerHand))
+});
+
+app.post("/dealerHandVal", (req, res) => {
+    res.json(handValue(game.dealerHand))
 });
 
 app.post("/restart", (req, res) => {
@@ -216,10 +220,10 @@ app.post("/restart", (req, res) => {
 app.post("/stand", (req, res) => {
     stand(game.dealerHand)
     win(game.playerHand, game.dealerHand)
-    console.log(game.win)
-    console.log(game.message)
-    console.log(handValue(game.playerHand))
-    console.log(handValue(game.dealerHand))
+    // console.log(game.win)
+    // console.log(game.message)
+    // console.log(handValue(game.playerHand))
+    // console.log(handValue(game.dealerHand))
     res.json(game)
 });
 

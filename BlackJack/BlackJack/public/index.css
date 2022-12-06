@@ -3,22 +3,30 @@ div#dealerStuff{
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
-    background-color: blue;
+    /* background-color: blue; */
     gap: 30px;
-    
 }
 div#playerStuff{
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
-    background-color: blue;
+    /* background-color: blue; */
     gap: 30px;
 }
 div#buttonRow{
     display: flex;
     align-items: flex-end;
-    background-color: orange;
+    justify-content: center;
+    gap: 25px;
+    /* background-color: orange; */
+}
+div#gameState{
+    display: flex;
+    align-items: flex-end;
+    /* background-color: plum; */
+    color: white;
+    justify-content: center;
 }
 div#cards{
     display: flex;
@@ -34,5 +42,9 @@ body{
     flex-direction: column;
     background-color: green;
 }
-
+button{
+    height: 75px;
+    width: 125px;
+    color: black;
+}
 
