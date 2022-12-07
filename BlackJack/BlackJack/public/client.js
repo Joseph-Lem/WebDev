@@ -6,7 +6,7 @@ hitButton.addEventListener('click', async() => {
         playerHandDiv.removeChild(playerHandDiv.firstChild)
     } 
 
-    let hitCard = await fetch('http://localhost:3000/hit', {method: 'POST'})
+    let hitCard = await fetch('/hit', {method: 'POST'})
     let game = await hitCard.json()
 
     for(let card of game.playerHand){
@@ -39,10 +39,13 @@ hitButton.addEventListener('click', async() => {
 
     let headerStuff = document.querySelector("div#gameState");
     let h1 = document.createElement('h1');
-    h1.textContent = `Winner: ${game.win}`;
+    h1.textContent = `Winner: ${game.win} Message: ${game.message}`;
     headerStuff.appendChild(h1);
 
     if(game.win === "dealer"){
+        document.querySelector("button#hitB").disabled = true;
+    }
+    if(game.win === "BlackJack"){
         document.querySelector("button#hitB").disabled = true;
     }
 });
@@ -59,7 +62,7 @@ resetButton.addEventListener('click', async() => {
         dealerHandDiv.removeChild(dealerHandDiv.firstChild)
     }
 
-    let Cards = await fetch('http://localhost:3000/restart', {method: 'POST'})
+    let Cards = await fetch('/restart', {method: 'POST'})
     let game = await Cards.json()
     
     
@@ -155,7 +158,7 @@ standButton.addEventListener('click', async() => {
         dealerHandDiv.removeChild(dealerHandDiv.firstChild)
     }
 
-    let Cards = await fetch('http://localhost:3000/stand', {method: 'POST'})
+    let Cards = await fetch('/stand', {method: 'POST'})
     let game = await Cards.json()
     
     for(let card of game.playerHand){
@@ -212,7 +215,7 @@ standButton.addEventListener('click', async() => {
 
     let headerStuff = document.querySelector("div#gameState");
     let h1 = document.createElement('h1');
-    h1.textContent = `Winner: ${game.win}`;
+    h1.textContent = `Winner: ${game.win} Message: ${game.message}`;
     headerStuff.appendChild(h1);
 
     document.querySelector("button#hitB").disabled = true;
